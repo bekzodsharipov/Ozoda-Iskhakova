@@ -1,1 +1,258 @@
-function loadWistiaOnce(){return window.__wistiaLoading||(window.__wistiaLoading=new Promise((s=>{if(document.querySelector('script[src="https://fast.wistia.com/player.js"]'))return void s();const i=document.createElement("script");i.src="https://fast.wistia.com/player.js",i.async=!0,i.onload=()=>s(),document.head.appendChild(i)}))),window.__wistiaLoading}function mountWistia(s){const i=s.getAttribute("data-wistia"),a=s.getAttribute("data-aspect")||"0.5625";i&&(s.innerHTML=`<wistia-player media-id="${i}" aspect="${a}"></wistia-player>`)}function initWistiaLazy(){const s=document.querySelectorAll(".wistiaLazy");if(!s.length)return;s.forEach((s=>{s.__bound||(s.__bound=!0,s.addEventListener("click",(async()=>{s.__mounted||(s.__mounted=!0,await loadWistiaOnce(),mountWistia(s))}),{passive:!0}))}));const i=new IntersectionObserver((s=>{s.some((s=>s.isIntersecting))&&(i.disconnect(),loadWistiaOnce())}),{rootMargin:"900px 0px"});i.observe(s[0])}document.addEventListener("DOMContentLoaded",(()=>{const s=document.getElementById("lazyHTML"),i=document.getElementById("lazySentinel");if(!s||!i)return;let a=!1;const t=new IntersectionObserver((i=>{i.some((s=>s.isIntersecting))&&(t.disconnect(),a||(a=!0,s.innerHTML='  <section class="users">\n        <div class="users__container container">\n            <h2 class="users__title">KURS KIMLAR UCHUN:</h2>\n            <div class="users__wrapper">\n                <div class="users__box">\n                    <div class="users__top">\n                        <h3 class="users__top__title">01/</h3>\n                        <p class="users__top__text">Boshlang\'ich, noldan <br> tikishni o\'rganmoqchi</p>\n                    </div>\n                    <div class="users__info"> <img class="users__images" src="./images/users/1.avif" loading="lazy"\n                            decoding="async" width="320" height="249" alt="images">\n                        <div class="users__row"> <img src="./images/users/icon.avif" loading="lazy" decoding="async"\n                                width="46" height="46" alt="icon">\n                            <div class="users__item">\n                                <p>@mona.idesign_</p>\n                            </div>\n                        </div>\n                        <ul class="users__nav" style="margin-bottom: 35px;">\n                            <h4 class="users__nav__title">Kursdan oldin:</h4>\n                            <li class="users__nav__list">O\'qishga noldan keldim</li>\n                        </ul>\n                        <ul class="users__nav">\n                            <h4 class="users__nav__title">Kursdan keyin:</h4>\n                            <li class="users__nav__list">Asos andozani mukammal o\'rgandim</li>\n                            <li class="users__nav__list">Без примерка va no standart qomatga <br> bemalol tika olaman\n                            </li>\n                            <li class="users__nav__list">Qiyin bichimdagi, klassik va astarlik <br> fasonlarni mustaqil\n                                bicha olaman</li>\n                        </ul>\n                    </div>\n                </div>\n                <div class="users__box">\n                    <div class="users__top">\n                        <h3 class="users__top__title">02/</h3>\n                        <p class="users__top__text">Malaka oshirishni istagan <br> tikuvchilar uchun</p>\n                    </div>\n                    <div class="users__info"> <img class="users__images" src="./images/users/2.avif" loading="lazy"\n                            decoding="async" width="320" height="249" alt="images">\n                        <ul class="users__nav" style="margin-bottom: 35px;">\n                            <h4 class="users__nav__title">Kursdan oldin:</h4>\n                            <li class="users__nav__list">Andoza bilan ishlamaganman</li>\n                            <li class="users__nav__list">Yeng chiqarishda qiynalganman</li>\n                            <li class="users__nav__list">Klassik fasonlarni bichib-tikishni <br> bilmas edim</li>\n                        </ul>\n                        <ul class="users__nav">\n                            <h4 class="users__nav__title">Kursdan keyin:</h4>\n                            <li class="users__nav__list">Oylik daromadim 4x baravar oshdi</li>\n                            <li class="users__nav__list">Astarlik kostyum va klassik shimlarni <br> bichib-tikishni\n                                o\'rgandim</li>\n                        </ul>\n                    </div>\n                </div>\n                <div class="users__box">\n                    <div class="users__top">\n                        <h3 class="users__top__title">03/</h3>\n                        <p class="users__top__text">Ishlab chiqarish biznesini <br> ochishni istaganlar uchun</p>\n                    </div>\n                    <div class="users__info"> <img class="users__images" src="./images/users/3.avif" loading="lazy"\n                            decoding="async" width="320" height="249" alt="images">\n                        <div class="users__row"> <img src="./images/users/icon.avif" loading="lazy" decoding="async"\n                                width="46" height="46" alt="icon">\n                            <div class="users__item">\n                                <p>@sayyora_design</p>\n                            </div>\n                        </div>\n                        <ul class="users__nav" style="margin-bottom: 35px;">\n                            <h4 class="users__nav__title">Kursdan oldin:</h4>\n                            <li class="users__nav__list">Andozamda kamchilik bo\'lgan</li>\n                            <li class="users__nav__list">“Ko\'p narsani bilaman” deb o\'ylaganman</li>\n                        </ul>\n                        <ul class="users__nav">\n                            <h4 class="users__nav__title">Kursdan keyin:</h4>\n                            <li class="users__nav__list">Oylik daromadim: 15 mln so\'m</li>\n                            <li class="users__nav__list">Uy liboslari yo\'nalishida kolleksiya <br> chiqardim</li>\n                            <li class="users__nav__list">Andozani mukammal o\'rgandim va <br> tikkan liboslarimiz\n                                qolipdek tushyapti</li>\n                        </ul>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n    <section class="tariffs">\n        <div class="tariffs__container container">\n            <h2 class="tariffs__title">TARIFLAR</h2>\n            <div class="tariffs__box" style="margin-bottom: 35px;">\n                <div class="tariffs__name">\n                    <h3>CLASSIC tarif</h3>\n                </div>\n                <div class="tariffs__col">\n                    <div class="tariffs__info">\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Asos va yeng andozasi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">O’lchov olish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Asos andoza</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Yeng andoza</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Libos balansi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Bichish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Ko’krak vitochka ko’chirish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Yeng modellashtirish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Bachokli kostyum</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Bachokli kastyum andozasini chizish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Bachokli kastyum yengi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Bachokli kastyum bichilishi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Bachokli kastym choklarini <br> VTO dazmol qilish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Yeng shlitsasini tikish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">Astar tikish texnikasi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">1 oy davomida kuratorlar nazorati</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">2 marotaba Kuratorlar bilan Jonli Efir</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dot"></div>\n                            <p class="tariffs__text">3 oy o’qish materiallariga kirish imkoniyati</p>\n                        </div>\n                    </div> <button class="tariffs__btn registerBtn">Ma\'lumot olish</button>\n                </div>\n            </div>\n            <div class="tariffs__box">\n                <div class="tariffs__names">\n                    <h3>Standart tarif</h3>\n                </div>\n                <div class="tariffs__cols">\n                    <div class="tariffs__info">\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">10 xil yubka</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Klassik shim (bichish tikish <br> texnikasi VTO dazmoli)</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Klassik shim (bichish tikish <br> texnikasi VTO dazmoli)</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Asos va yeng andozasi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">O’lchov olish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Asos andoza</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Yeng andoza</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Libos balansi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Bichish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Ko’krak vitochka ko’chirish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Yeng modellashtirish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Bachokli kostyum</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Bachokli kastyum andozasini chizish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Bachokli kastyum yengi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Bachokli kastyum bichilishi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Bachokli kastym choklarini <br> VTO dazmol qilish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Yeng shlitsasini tikish</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Astar tikish texnikasi</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">7 xil yoqa turlari(rubashka yoqa, stoyka <br> yoqa qaytarma yoqa\n                                va hokazo)</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Reglan</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Davomiyligi: 2 oy</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">Kuratorlar nazorati va savol-javob <br> uchun chat</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">4 marotaba Kuratorlar bilan Jonli Efir</p>\n                        </div>\n                        <div class="tariffs__item">\n                            <div class="tariffs__dots"></div>\n                            <p class="tariffs__texts">6 oy o’qish materiallariga kirish imkoniyati</p>\n                        </div>\n                    </div> <button class="tariffs__btn registerBtn"\n                        style="background: radial-gradient(128.21% 194.57% at 50.1% 0%, #FFE5BD 0%, #FFCC7F 100%); box-shadow: 0px 4px 0px 0px #897353; color: #28110C;">Ma\'lumot\n                        olish</button>\n                </div>\n            </div>\n        </div>\n    </section>\n    <section class="speakerInfo">\n        <div class="speakerInfo__container container">\n            <h2 class="users__title">OZODA ISKHAKOVA</h2>\n            <div class="speakerInfo__box">\n                <div class="speakerInfo__imgBox"> <img src="./images/speaker.avif" loading="lazy" decoding="async"\n                        width="320" height="375" alt="speaker"> </div>\n                <div class="tariffs__infos">\n                    <div class="tariffs__item">\n                        <div class="tariffs__dots"></div>\n                        <p class="tariffs__texts">25 yillik tajribaga ega Dizayner</p>\n                    </div>\n                    <div class="tariffs__item">\n                        <div class="tariffs__dots"></div>\n                        <p class="tariffs__texts">4 ta davlatda filial Qatar, Rossiya, <br> Turkiya va O’zbekiston</p>\n                    </div>\n                    <div class="tariffs__item">\n                        <div class="tariffs__dots"></div>\n                        <p class="tariffs__texts">100 ta oshiq sodiq xodimlar</p>\n                    </div>\n                    <div class="tariffs__item">\n                        <div class="tariffs__dots"></div>\n                        <p class="tariffs__texts">1500 dan ziyod Tikuvchilik yo\'nalishini <br> biznesga aylantira olgan\n                            shogirdlar</p>\n                    </div>\n                    <div class="tariffs__item">\n                        <div class="tariffs__dots"></div>\n                        <p class="tariffs__texts">O\'zbekistondan yagona va birinchi <br> dizaynerlardan bo\'lib IFCO\n                            Istanbul, <br> Zinatha Qatar va Fransiya dunyo <br> namoyishlarda Xalqaro bozorda <br>\n                            kolleksiyasi orqali sotuv qilayotgan <br> Dizayner </p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n    <section class="auto-swiper">\n        <div class="auto-swiper__track"> <img src="./images/animation/1.avif" loading="lazy" decoding="async"\n                width="276" height="491" alt="images"> <img src="./images/animation/2.avif" loading="lazy"\n                decoding="async" width="276" height="491" alt="images"> <img src="./images/animation/3.avif"\n                loading="lazy" decoding="async" width="276" height="491" alt="images"> <img\n                src="./images/animation/4.avif" loading="lazy" decoding="async" width="276" height="491" alt="images">\n            <img src="./images/animation/1.avif" loading="lazy" decoding="async" width="276" height="491" alt="images">\n            <img src="./images/animation/2.avif" loading="lazy" decoding="async" width="276" height="491" alt="images">\n            <img src="./images/animation/3.avif" loading="lazy" decoding="async" width="276" height="491" alt="images">\n            <img src="./images/animation/4.avif" loading="lazy" decoding="async" width="276" height="491" alt="images">\n        </div>\n    </section>\n    <section class="thought">\n        <div class="thought__container container">\n            <h2 class="users__title">BIZ HAQIMIZDA FIKRLAR:</h2>\n            <div class="thought__box" style="margin-bottom: 35px;">\n                <div class="thought__img"> <wistia-player media-id="ctf0t1yoxr" aspect="0.5625"></wistia-player> </div>\n                <div class="thought__img"> <wistia-player media-id="2qsgca5h1i" aspect="0.5625"></wistia-player> </div>\n                <div class="thought__img"> <wistia-player media-id="2v4surcjx8" aspect="0.5625"></wistia-player> </div>\n                <div class="thought__img"> <wistia-player media-id="yjuecnhj6z" aspect="0.5625"></wistia-player> </div>\n                <div class="thought__img"> <wistia-player media-id="5dtd6apu5q" aspect="0.5625"></wistia-player> </div>\n                <div class="thought__img"> <wistia-player media-id="cgbck9vwkb" aspect="0.5625"></wistia-player> </div>\n            </div> <button class="tariffs__btn registerBtn">Ma\'lumot olish</button>\n        </div>\n    </section>\n    <footer class="footer">\n        <div class="footer__container">\n            <h3 class="footer__title">OZODA ISKHAKOVA</h3>\n            <p class="footer__text" style="margin-bottom: 16px;">This site or product is not part of or endorsed by\n                Facebook, <br> Google, or any social media platform in any way FACEBOOK <br> is a trademark of META\n                PLATFORMS, Inc. YOUTUBE and <br> GOOGLE are trademarks of ALPHABET, Inc. </p>\n            <p class="footer__text">Barcha huquqlar himoyalangan, 2026.</p>\n        </div>\n    </footer>',s.innerHTML=s.innerHTML||"",initWistiaLazy()))}),{rootMargin:"600px 0px"});t.observe(i)})),document.addEventListener("DOMContentLoaded",(()=>{const s=document.querySelectorAll(".registerBtn"),i=document.getElementById("registrationModal"),a=document.getElementById("closeModalBtn"),t=document.querySelector(".homeModalOverlay"),n=document.getElementById("registrationForm"),e=document.getElementById("name"),l=document.getElementById("nameError"),d=document.getElementById("phone"),r=document.getElementById("phoneError"),_=document.getElementById("submitBtn"),o=window.phoneFormatter;let c=!1,f=0;function v(){i&&(c=!0,f=window.scrollY,i.style.display="block",document.body.style.overflow="hidden",l&&(l.style.display="none"),r&&(r.style.display="none"))}function m(){i&&c&&(c=!1,i.style.display="none",document.body.style.overflow="",window.scrollTo(0,f))}s.forEach((s=>s.addEventListener("click",v))),a&&a.addEventListener("click",m),t&&t.addEventListener("click",m),n&&n.addEventListener("submit",(s=>{if(s.preventDefault(),!o)return console.error("phoneFormatter is not initialized. Check phoneFormatter.js load order."),void(r&&(r.style.display="block"));const i=(e?.value||"").trim(),a=(d?.value||"").trim();let t=!1;if(i?l&&(l.style.display="none"):(l&&(l.style.display="block"),t=!0),o.validate(a)?r&&(r.style.display="none"):(r&&(r.style.display="block"),t=!0),t)return;_&&(_.textContent="YUBORILMOQDA...",_.disabled=!0);const n=new Date,c=n.toLocaleDateString("uz-UZ"),f=n.toLocaleTimeString("uz-UZ"),v={Ism:i,TelefonRaqam:o.getCurrentCode()+" "+a,SanaSoat:c+" - "+f};localStorage.setItem("formData",JSON.stringify(v)),window.location.href="/thankYou.html",_&&(_.textContent="DAVOM ETISH",_.disabled=!1),e&&(e.value=""),d&&(d.value=""),m()}))}));let time=300;const timerEl=document.getElementById("timer");function renderTimer(){if(!timerEl)return;const s=String(Math.floor(time/60)).padStart(2,"0"),i=String(time%60).padStart(2,"0");timerEl.textContent=`${s} : ${i}`,time>0?time--:clearInterval(timerInterval)}renderTimer();const timerInterval=setInterval(renderTimer,1e3);
+/***********************
+ * 1) Lazy HTML inject (IntersectionObserver)
+ ***********************/
+document.addEventListener("DOMContentLoaded", () => {
+    const mount = document.getElementById("lazyHTML");
+    const sentinel = document.getElementById("lazySentinel");
+    if (!mount || !sentinel) return;
+  
+    let injected = false;
+  
+    const inject = () => {
+      if (injected) return;
+      injected = true;
+  
+      mount.innerHTML = `
+    <section class="thought">
+        <div class="thought__container container">
+            <h2 class="users__title">BIZ HAQIMIZDA FIKRLAR:</h2>
+            <div class="thought__box" style="margin-bottom: 35px;">
+                <div class="thought__img"> <wistia-player media-id="ctf0t1yoxr" aspect="0.5625"></wistia-player> </div>
+                <div class="thought__img"> <wistia-player media-id="2qsgca5h1i" aspect="0.5625"></wistia-player> </div>
+                <div class="thought__img"> <wistia-player media-id="2v4surcjx8" aspect="0.5625"></wistia-player> </div>
+                <div class="thought__img"> <wistia-player media-id="yjuecnhj6z" aspect="0.5625"></wistia-player> </div>
+                <div class="thought__img"> <wistia-player media-id="5dtd6apu5q" aspect="0.5625"></wistia-player> </div>
+                <div class="thought__img"> <wistia-player media-id="cgbck9vwkb" aspect="0.5625"></wistia-player> </div>
+            </div> <button class="tariffs__btn registerBtn">Ma'lumot olish</button>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer__container">
+            <h3 class="footer__title">OZODA ISKHAKOVA</h3>
+            <p class="footer__text" style="margin-bottom: 16px;">This site or product is not part of or endorsed by
+                Facebook, <br> Google, or any social media platform in any way FACEBOOK <br> is a trademark of META
+                PLATFORMS, Inc. YOUTUBE and <br> GOOGLE are trademarks of ALPHABET, Inc. </p>
+            <p class="footer__text">Barcha huquqlar himoyalangan, 2026.</p>
+        </div>
+    </footer>`;
+      mount.innerHTML = mount.innerHTML || "";
+  
+      initWistiaLazy();
+    };
+  
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          inject();
+        }
+      },
+      { rootMargin: "600px 0px" }
+    );
+  
+    io.observe(sentinel);
+  });
+  
+  /***********************
+   * 2) Wistia lazy load (CLICK-TO-PLAY)
+   *    - player.js faqat kerak bo‘lganda yuklanadi
+   ***********************/
+  function loadWistiaOnce() {
+    if (window.__wistiaLoading) return window.__wistiaLoading;
+  
+    window.__wistiaLoading = new Promise((resolve) => {
+      // Agar avvaldan qo‘shilgan bo‘lsa ham qayta qo‘shmaymiz
+      if (document.querySelector('script[src="https://fast.wistia.com/player.js"]')) {
+        resolve();
+        return;
+      }
+  
+      const s = document.createElement("script");
+      s.src = "https://fast.wistia.com/player.js";
+      s.async = true;
+      s.onload = () => resolve();
+      document.head.appendChild(s);
+    });
+  
+    return window.__wistiaLoading;
+  }
+  
+  function mountWistia(box) {
+    const id = box.getAttribute("data-wistia");
+    const aspect = box.getAttribute("data-aspect") || "0.5625"; // 9:16 default
+    if (!id) return;
+  
+    // poster + button o‘rniga player render
+    box.innerHTML = `<wistia-player media-id="${id}" aspect="${aspect}"></wistia-player>`;
+  }
+  
+  function initWistiaLazy() {
+    const items = document.querySelectorAll(".wistiaLazy");
+    if (!items.length) return;
+  
+    // Click-to-play
+    items.forEach((box) => {
+      if (box.__bound) return;
+      box.__bound = true;
+  
+      box.addEventListener(
+        "click",
+        async () => {
+          if (box.__mounted) return;
+          box.__mounted = true;
+  
+          await loadWistiaOnce();
+          mountWistia(box);
+        },
+        { passive: true }
+      );
+    });
+  
+    // Optional: user video section’ga yaqinlashsa player.js ni oldindan yuklab qo‘yadi
+    const preIo = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          preIo.disconnect();
+          loadWistiaOnce();
+        }
+      },
+      { rootMargin: "900px 0px" }
+    );
+  
+    preIo.observe(items[0]);
+  }
+  
+  /***********************
+   * 3) Modal + form validation + redirect
+   ***********************/
+  document.addEventListener("DOMContentLoaded", () => {
+    const btns = document.querySelectorAll(".registerBtn");
+    const modal = document.getElementById("registrationModal");
+    const closeBtn = document.getElementById("closeModalBtn");
+    const overlay = document.querySelector(".homeModalOverlay");
+    const form = document.getElementById("registrationForm");
+  
+    const nameInput = document.getElementById("name");
+    const nameError = document.getElementById("nameError");
+  
+    const phoneInput = document.getElementById("phone");
+    const phoneError = document.getElementById("phoneError");
+  
+    const submitBtn = document.getElementById("submitBtn");
+    const formatter = window.phoneFormatter;
+  
+    let opened = false;
+    let lastScrollY = 0;
+  
+    function openModal() {
+      if (!modal) return;
+      opened = true;
+      lastScrollY = window.scrollY;
+  
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+  
+      if (nameError) nameError.style.display = "none";
+      if (phoneError) phoneError.style.display = "none";
+    }
+  
+    function closeModal() {
+      if (!modal || !opened) return;
+      opened = false;
+  
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+  
+      window.scrollTo(0, lastScrollY);
+    }
+  
+    btns.forEach((b) => b.addEventListener("click", openModal));
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
+    if (overlay) overlay.addEventListener("click", closeModal);
+  
+    if (!form) return;
+  
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      if (!formatter) {
+        console.error("phoneFormatter is not initialized. Check phoneFormatter.js load order.");
+        if (phoneError) phoneError.style.display = "block";
+        return;
+      }
+  
+      const name = (nameInput?.value || "").trim();
+      const phone = (phoneInput?.value || "").trim();
+  
+      let hasError = false;
+  
+      if (!name) {
+        if (nameError) nameError.style.display = "block";
+        hasError = true;
+      } else {
+        if (nameError) nameError.style.display = "none";
+      }
+  
+      if (!formatter.validate(phone)) {
+        if (phoneError) phoneError.style.display = "block";
+        hasError = true;
+      } else {
+        if (phoneError) phoneError.style.display = "none";
+      }
+  
+      if (hasError) return;
+  
+      if (submitBtn) {
+        submitBtn.textContent = "YUBORILMOQDA...";
+        submitBtn.disabled = true;
+      }
+  
+      const now = new Date();
+      const date = now.toLocaleDateString("uz-UZ");
+      const time = now.toLocaleTimeString("uz-UZ");
+  
+      const data = {
+        Ism: name,
+        TelefonRaqam: formatter.getCurrentCode() + " " + phone,
+        SanaSoat: date + " - " + time,
+      };
+  
+      localStorage.setItem("formData", JSON.stringify(data));
+  
+      // redirect
+      window.location.href = "/thankYou.html";
+  
+      // (bu pastdagi kod redirect bo‘lgani uchun ko‘p holatda ishlamaydi, lekin qoldirdim)
+      if (submitBtn) {
+        submitBtn.textContent = "DAVOM ETISH";
+        submitBtn.disabled = false;
+      }
+  
+      if (nameInput) nameInput.value = "";
+      if (phoneInput) phoneInput.value = "";
+  
+      closeModal();
+    });
+  });
+  
+  /***********************
+   * 4) Countdown timer (05:00)
+   ***********************/
+  let time = 5 * 60;
+  const timerEl = document.getElementById("timer");
+  
+  function renderTimer() {
+    if (!timerEl) return;
+  
+    const mm = String(Math.floor(time / 60)).padStart(2, "0");
+    const ss = String(time % 60).padStart(2, "0");
+  
+    timerEl.textContent = `${mm} : ${ss}`;
+  
+    if (time > 0) time--;
+    else clearInterval(timerInterval);
+  }
+  
+  renderTimer();
+  const timerInterval = setInterval(renderTimer, 1000);
+  
