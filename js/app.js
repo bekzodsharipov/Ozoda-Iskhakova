@@ -307,3 +307,22 @@ function loadWistiaOnce() {
   
   document.addEventListener("DOMContentLoaded", initWistiaLazy);
   
+  function initWistiaClickOnly() {
+    document.querySelectorAll(".wistiaMount").forEach((el) => {
+      if (el.__bound) return;
+      el.__bound = true;
+  
+      el.innerHTML = `<button type="button" class="wistiaPlayBtn">Play</button>`;
+  
+      el.addEventListener("click", async () => {
+        if (el.__mounted) return;
+        el.__mounted = true;
+  
+        await loadWistiaOnce();
+        mountWistia(el);
+      });
+    });
+  }
+  
+  document.addEventListener("DOMContentLoaded", initWistiaClickOnly);
+  
