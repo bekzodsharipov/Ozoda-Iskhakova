@@ -1,39 +1,52 @@
-async function sendFormData() {
-  const formDataRaw = localStorage.getItem("formData");
-  if (!formDataRaw) {
+async function sendPhoneAndTime() {
+  const raw = localStorage.getItem("formData");
+  if (!raw) return;
+
+  let data;
+  try {
+    data = JSON.parse(raw);
+  } catch (e) {
+    console.error("formData JSON parse error:", e);
     return;
   }
 
-  const formDataObj = JSON.parse(formDataRaw);
+  const phoneRaw = (data?.TelefonRaqam ?? "").toString().trim();
+  const timeRaw = (data?.SanaSoat ?? "").toString().trim(); 
 
+  const digits = phoneRaw.replace(/\D/g, "");
+  const isValidPhone =
+    (phoneRaw.startsWith("+998") && digits.length === 12) ||
+    (!phoneRaw.startsWith("+") && digits.length >= 9 && digits.length <= 12);
 
-  // Prepare FormData for API
+  if (!isValidPhone) {
+    console.warn("Telefon noto‘g‘ri, yuborilmadi:", phoneRaw);
+    return;
+  }
+
+  const regTime = timeRaw || new Date().toISOString();
+
   const formData = new FormData();
   formData.append("sheetName", "Lead");
-  formData.append("Ism", formDataObj.Ism);
-  formData.append("Telefon raqam", formDataObj.TelefonRaqam);
-  formData.append("Royhatdan o'tgan vaqti", formDataObj.SanaSoat);
+  formData.append("Telefon raqam", phoneRaw);
+  formData.append("Royhatdan o'tgan vaqti", regTime);
 
   try {
-    const response = await fetch(
+    const res = await fetch(
       "https://script.google.com/macros/s/AKfycbzjCFc9VJrpB0C6lw0II5xDkON10WyNtNTzORSVVIaK7MXwvP387wjkjLiqVr3eutaB/exec",
-      {
-        method: "POST",
-        body: formData,
-      }
+      { method: "POST", body: formData }
     );
-    
-    
-    if (response.ok) {
-      localStorage.removeItem("formData");
-    } else {
-      throw new Error("API response was not ok");
-    }
-  } catch (error) {
-    console.error("Error submitting form:", error);
-    document.getElementById("errorMessage").style.display = "block";
+
+    if (!res.ok) throw new Error("API response was not ok");
+
+    localStorage.removeItem("formData");
+  } catch (err) {
+    console.error("Error submitting form:", err);
+    const el = document.getElementById("errorMessage");
+    if (el) el.style.display = "block";
   }
 }
 
-// Send data when page loads
-window.onload = sendFormData;
+window.addEventListener("load", sendPhoneAndTime);
+
+
+
